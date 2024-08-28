@@ -20,8 +20,12 @@
     padding: 0.5rem 1rem;
     font-weight: 700;
     border: 1px solid rgb(255, 152, 0);
-    color: black;
-    font-size: 15px;
+    background: transparent;
+    color: rgb(51, 51, 51);
+    transition: 0.1s;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 .nav-item:hover {
@@ -29,3 +33,25 @@
     background: rgb(255, 152, 0);
     color: rgb(255, 255, 255);
 }
+
+.nav-text {
+    display: inline;
+  }
+  
+  .nav-icon {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .nav-text {
+      display: none; 
+    }
+    
+    .nav-icon {
+      display: inline;
+    }
+
+    .nav-item {
+        background: rgb(255, 152, 0);
+    }
+  }
