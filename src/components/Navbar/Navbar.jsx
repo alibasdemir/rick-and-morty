@@ -27,12 +27,13 @@ function Navbar() {
                 <span className="nav-text">support us</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
+                  style={{ fontSize: "16px", verticalAlign: "middle" }}
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 24 28"
+                  fill="white"
+                  stroke="white"
+                  strokeWidth="0"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   className="feather feather-heart nav-icon"
