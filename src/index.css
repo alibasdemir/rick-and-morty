@@ -7,13 +7,12 @@ body {
 }
 
 ::selection {
-  color: rgb(255, 152, 0);
+  color: var(--hoover-color);
   background: rgb(32, 35, 41);
 }
 
 a {
   text-decoration: none;
-  font-weight: 700;
 }
 
 a:hover {

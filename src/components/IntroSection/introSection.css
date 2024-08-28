@@ -1,8 +1,6 @@
 .section {
   display: flex;
-  -webkit-box-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
   align-items: center;
   flex-direction: column;
   height: calc(-60px + 50vh);
