@@ -1,0 +1,44 @@
+.section {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-direction: column;
+  height: calc(-60px + 50vh);
+  text-align: center;
+  position: relative;
+}
+
+.rickAndMorty {
+  margin: 0px;
+  color: rgb(32, 35, 41);
+  border: none;
+  font-weight: 900;
+  z-index: 1;
+  font-size: 5.625rem;
+}
+
+.section .hero-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.section .hero-image svg {
+  width: 100%;
+  height: 100%;
+  fill: rgb(245, 245, 245);
+}
+
+@media ((max-width: 40.625em)) {
+  .rickAndMorty {
+    font-size: 3.12rem;
+  }
+}
+
+@media (max-width: 55.625em) {
+  .rickAndMorty {
+    font-size: 3.75rem;
+  }
+}
