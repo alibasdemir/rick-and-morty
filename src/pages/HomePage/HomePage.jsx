@@ -1,11 +1,11 @@
-import Card from "../../components/Card/Card";
 import IntroSection from "../../components/IntroSection/IntroSection";
+import CardContainer from "../../containers/CardContainer";
 
 function HomePage() {
   return (
     <>
       <IntroSection />
-      <Card />
+      <CardContainer />
     </>
   );
 }
