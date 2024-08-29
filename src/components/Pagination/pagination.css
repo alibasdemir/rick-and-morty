@@ -1,0 +1,31 @@
+.paginationn {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  font-family: monospace;
+}
+
+.page-item {
+  margin: 0 5px;
+  color: rgb(255, 152, 0);
+}
+
+.page-link {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  color: rgb(255, 152, 0);
+}
+
+.page-link:hover {
+  background-color: rgb(60, 62, 68);
+  color: white;
+}
+
+.page-item.active .page-link {
+  background-color: rgb(255, 152, 0);
+  color: white;
+  border: 1px solid rgb(39, 43, 51);
+}

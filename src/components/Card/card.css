@@ -5,6 +5,7 @@ h2 {
 
 .sectionCard {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 4.5rem 0px;
