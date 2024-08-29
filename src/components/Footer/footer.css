@@ -1,0 +1,92 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  position: relative;
+  background: rgb(32, 35, 41);
+  color: rgb(158, 158, 158);
+  padding: 4.5rem 0px;
+  min-height: calc(120px);
+  width: 100%;
+}
+
+.footer ul {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+
+.footer ul li {
+  margin: 0px;
+}
+
+.footer ul li + li {
+  margin-left: 1.5rem;
+}
+
+.footer ul li a {
+  color: rgb(158, 158, 158);
+}
+
+.footer ul li a:hover {
+  color: rgb(255, 152, 0);
+}
+
+.footer .mt {
+  margin-top: 1.25rem;
+}
+
+ul li {
+  padding-left: 0;
+}
+li {
+  list-style-type: none;
+}
+
+.details {
+  margin: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+}
+
+.serverStatus {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  color: rgb(158, 158, 158);
+}
+
+.serverStatus .server-icon {
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  background: rgb(85, 204, 68);
+}
+
+.creator span {
+  font-size: 0.75rem;
+}
+
+.creator span a {
+  font-weight: bold;
+  transition: color 0.2s;
+  color: rgb(245, 245, 245);
+  border-bottom: 1px solid rgb(255, 152, 0);
+}
+
+.creator span a:hover,
+.gnCdgM span a:focus {
+  color: rgb(255, 152, 0);
+  border-bottom: none;
+}
