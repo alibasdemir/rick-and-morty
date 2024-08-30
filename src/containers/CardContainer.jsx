@@ -2,16 +2,24 @@ import { useEffect, useState } from "react";
 import { getAllCharacters } from "../utils/axiosApi";
 import Card from "../components/Card/Card";
 import Pagination from "../components/Pagination/Pagination";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function CardContainer() {
   const [characters, setCharacters] = useState([]);
   const [error, setError] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [nextPageUrl, setNextPageUrl] = useState(null);
   const [prevPageUrl, setPrevPageUrl] = useState(null);
 
+  const navigate = useNavigate(); 
+  const location = useLocation(); 
+  
+  const query = new URLSearchParams(location.search);
+  const pageFromUrl = parseInt(query.get("page")) || 1;
+  const [currentPage, setCurrentPage] = useState(pageFromUrl);
+
   useEffect(() => {
+    setCurrentPage(pageFromUrl);
     const fetchData = async (page = 1) => {
       try {
         const data = await getAllCharacters(page);
@@ -30,10 +38,13 @@ function CardContainer() {
       }
     };
 
-    fetchData(currentPage);
-  }, [currentPage]);
+    fetchData(pageFromUrl);
+  }, [pageFromUrl]); 
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    navigate(`?page=${pageNumber}`);
+  };
 
   return (
     <>
