@@ -1,5 +1,5 @@
 import React from "react"; // eslint-disable-line no-unused-vars
-import "../Navbar/navbar.css";
+import "./navbar.css";
 
 function Navbar() {
   return (

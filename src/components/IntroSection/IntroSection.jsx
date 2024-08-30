@@ -1,4 +1,5 @@
-import "../IntroSection/IntroSection.css";
+import "./introSection.css";
+
 import { ReactTyped } from "react-typed";
 
 function IntroSection() {

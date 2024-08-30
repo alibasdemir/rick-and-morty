@@ -1,4 +1,4 @@
-import "../Card/card.css";
+import "./card.css";
 
 /* eslint-disable react/prop-types */
 function Card({

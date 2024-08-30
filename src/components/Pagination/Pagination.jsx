@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import "../Pagination/pagination.css";
+import "./pagination.css";
 import { useState, useEffect } from "react";
 
 function Pagination({
