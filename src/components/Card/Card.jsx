@@ -13,6 +13,13 @@ function Card({
   episodeUrl,
   episodeName,
 }) {
+  
+  const statusClass = 
+  charStatus === 'Dead' ? 'status-dead' :
+  charStatus === 'unknown' ? 'status-unknown' :
+  charStatus === 'Alive' ? 'status-alive' :
+  'status-default';
+
   return (
     <>
       <article className="articleCard">
@@ -30,7 +37,7 @@ function Card({
               <h2>{charName}</h2>
             </a>
             <span className="status">
-              <span className="statusIcon"></span> {charStatus} - {charSpecies}
+              <span className={`statusIcon ${statusClass}`}></span> {charStatus} - {charSpecies}
             </span>
           </div>
           <div className="section">

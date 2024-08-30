@@ -98,8 +98,24 @@ h2 {
   height: 0.5rem;
   width: 0.5rem;
   margin-right: 0.375rem;
-  background: rgb(214, 61, 46);
+  /* background: rgb(214, 61, 46); */
   border-radius: 50%;
+}
+
+.status-dead {
+  background: rgb(214, 61, 46);
+}
+
+.status-unknown {
+  background: rgb(158, 158, 158);
+}
+
+.status-alive {
+  background: rgb(85, 204, 68);
+}
+
+.status-default {
+  background-color: aqua;
 }
 
 .divCharacterCard span {
