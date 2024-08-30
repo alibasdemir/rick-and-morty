@@ -2,6 +2,10 @@
   --hoover-color: rgb(255, 152, 0);
 }
 
+* {
+    box-sizing: inherit;
+}
+
 body {
   margin: 0;
 }

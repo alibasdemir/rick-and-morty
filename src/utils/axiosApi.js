@@ -1,11 +1,14 @@
 import axios from "axios"
 import { API_ENDPOINTS } from "./constants"
 
-export const getAllCharacters = async (page = 1) => {
+export const getAllCharacters = async (page = 1, searchTerm = '') => {
     try {
-        const response = await axios.get(`${API_ENDPOINTS.CHARACTERS}?page=${page}`);   // with page
+        let queryString = `?page=${page}`;
+        if (searchTerm) queryString += `&name=${searchTerm}`;
+
+        const response = await axios.get(`${API_ENDPOINTS.CHARACTERS}${queryString}`);
         return response.data;
-    } catch(error) {
+    } catch (error) {
         console.error('Axios error: ', error);
         throw error;
     }
@@ -50,3 +53,13 @@ export const getAllEpisodes = async () => {
         throw error;
     }
 };
+
+export const getEpisodeName = async (episodeUrl) => {
+    try {
+      const response = await axios.get(episodeUrl);
+      return response.data.name;
+    } catch (error) {
+      console.error("Axios error: ", error);
+      throw error;
+    }
+  };
