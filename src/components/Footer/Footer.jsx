@@ -1,6 +1,7 @@
 import "../Footer/footer.css";
 
-function Footer() {
+/* eslint-disable react/prop-types */
+function Footer({ totalCharacters, totalLocations, totalEpisodes }) {
   return (
     <>
       <footer className="footer">
@@ -10,7 +11,7 @@ function Footer() {
               title="characters"
               href="https://rickandmortyapi.com/api/character"
             >
-              <span className="details">characters: </span>
+              <span className="details">characters: {totalCharacters}</span>
             </a>
           </li>
           <li>
@@ -18,12 +19,12 @@ function Footer() {
               title="locations"
               href="https://rickandmortyapi.com/api/location"
             >
-              <span className="details">locations: </span>
+              <span className="details">locations: {totalLocations}</span>
             </a>
           </li>
           <li>
             <a title="episodes" href="https://rickandmortyapi.com/api/episode">
-              <span className="details">episodes: </span>
+              <span className="details">episodes: {totalEpisodes}</span>
             </a>
           </li>
         </ul>
