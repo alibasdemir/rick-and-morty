@@ -3,6 +3,7 @@ import { getAllCharacters, getEpisodeName } from "../utils/axiosApi";
 import Card from "../components/Card/Card";
 import Pagination from "../components/Pagination/Pagination";
 import SearchBar from "../components/SearchBar/SearchBar";
+import Filter from "../components/Filter/Filter";
 import { useNavigate, useLocation } from "react-router-dom";
 
 function CardContainer() {
@@ -12,6 +13,8 @@ function CardContainer() {
   const [nextPageUrl, setNextPageUrl] = useState(null);
   const [prevPageUrl, setPrevPageUrl] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
+  const [statusFilter, setStatusFilter] = useState("");
+  const [genderFilter, setGenderFilter] = useState("");
   const [isEmptyResult, setIsEmptyResult] = useState(false);
 
   const navigate = useNavigate();
@@ -25,7 +28,12 @@ function CardContainer() {
     setCurrentPage(pageFromUrl);
     const fetchData = async (page = 1) => {
       try {
-        const data = await getAllCharacters(page, searchTerm);
+        const data = await getAllCharacters(
+          page,
+          searchTerm,
+          statusFilter,
+          genderFilter
+        );
         console.log("API Response:", data);
         if (data.results) {
           setIsEmptyResult(data.results.length === 0);
@@ -46,34 +54,48 @@ function CardContainer() {
       } catch (err) {
         console.error("Error fetching characters:", err);
         setError(err.message);
-        console.log("Error:", error);
-
         setIsEmptyResult(true);
       }
     };
 
     fetchData(pageFromUrl);
-  }, [error, pageFromUrl, searchTerm]);
+  }, [error, pageFromUrl, searchTerm, statusFilter, genderFilter]);
 
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
     navigate(`?page=${pageNumber}`);
   };
 
+  const handleStatusChange = (status) => {
+    setStatusFilter(statusFilter === status ? "" : status);
+  };
+
+  const handleGenderChange = (gender) => {
+    setGenderFilter(genderFilter === gender ? "" : gender);
+  };
+
   useEffect(() => {
-    if (searchTerm) {
+    if (searchTerm || statusFilter || genderFilter) {
       setCurrentPage(1);
       navigate("?page=1");
     }
-  }, [searchTerm, navigate]);
+  }, [searchTerm, statusFilter, genderFilter, navigate]);
 
   return (
     <>
       {characters.length > 0 ? (
         <section className="sectionCard">
           <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+          <Filter
+            statusFilter={statusFilter}
+            genderFilter={genderFilter}
+            onStatusChange={handleStatusChange}
+            onGenderChange={handleGenderChange}
+          />
           {isEmptyResult ? (
-            <p style={{color:"Orange", fontSize:"56px"}}>No results found... 😢</p>
+            <p style={{ color: "Orange", fontSize: "56px" }}>
+              No results found... 😢
+            </p>
           ) : (
             <>
               <div className="divCard">

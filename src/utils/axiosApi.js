@@ -1,10 +1,12 @@
 import axios from "axios"
 import { API_ENDPOINTS } from "./constants"
 
-export const getAllCharacters = async (page = 1, searchTerm = '') => {
+export const getAllCharacters = async (page = 1, searchTerm = '', charStatus = '', charGender = '') => {
     try {
         let queryString = `?page=${page}`;
         if (searchTerm) queryString += `&name=${searchTerm}`;
+        if (charStatus) queryString += `&status=${charStatus}`;
+        if (charGender) queryString += `&gender=${charGender}`;
 
         const response = await axios.get(`${API_ENDPOINTS.CHARACTERS}${queryString}`);
         return response.data;
