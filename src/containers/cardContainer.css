@@ -1,0 +1,15 @@
+.noResult {
+  font-size: 56px;
+  color: rgb(255, 152, 0);
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .noResult {
+    font-size: 26px;
+  }
+}

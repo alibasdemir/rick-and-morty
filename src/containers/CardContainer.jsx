@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./cardContainer.css";
 import { getAllCharacters, getEpisodeName } from "../utils/axiosApi";
 import Card from "../components/Card/Card";
 import Pagination from "../components/Pagination/Pagination";
@@ -93,9 +94,7 @@ function CardContainer() {
             onGenderChange={handleGenderChange}
           />
           {isEmptyResult ? (
-            <p style={{ color: "Orange", fontSize: "56px" }}>
-              No results found... 😢
-            </p>
+            <p className="noResult">No results found... 😢</p>
           ) : (
             <>
               <div className="divCard">
@@ -127,7 +126,12 @@ function CardContainer() {
           )}
         </section>
       ) : (
-        <p>Loading...</p>
+        <div className="loading">
+          <img
+            src="https://huddersfield.exposed/files/loading2.gif"
+            alt="Loading"
+          />
+        </div>
       )}
     </>
   );

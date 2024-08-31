@@ -13,7 +13,7 @@
   height: 35px;
   border: none;
   background-color: rgb(32, 35, 41);
-  border: 2px solid white;
+  border: 2px solid #999;
   color: white;
   font-size: 24px;
   cursor: pointer;
@@ -32,4 +32,10 @@
 
 .down-btn {
   border-radius: 0 0 50% 50%;
+}
+
+@media (max-width: 768px) {
+  .scroll-buttons {
+    display: none;
+  }
 }

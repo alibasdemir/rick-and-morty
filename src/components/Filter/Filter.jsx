@@ -10,7 +10,7 @@ function Filter({
   return (
     <div className="filter-container">
       <div className="checkbox-wrapper-27">
-        <h7>Status:</h7>
+        <h6>Status:</h6>
         {["alive", "dead", "unknown"].map((status) => (
           <label key={status} className="checkbox">
             <input
@@ -25,7 +25,7 @@ function Filter({
         ))}
       </div>
       <div className="checkbox-wrapper-27">
-        <h7>Gender:</h7>
+        <h6>Gender:</h6>
         {["female", "male", "genderless", "unknown"].map((gender) => (
           <label key={gender} className="checkbox">
             <input
