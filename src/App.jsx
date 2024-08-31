@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import Navbar from "./components/Navbar/Navbar";
 import FooterContainer from "./containers/FooterContainer";
 import SupportUs from "./pages/SupportUs/SupportUs";
+import About from "./pages/About/About";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/support-us" element={<SupportUs />} />
+          <Route path="/about" element={<About />} />
         </Routes>
         <FooterContainer />
       </Router>

@@ -14,14 +14,14 @@ function Navbar() {
           </Link>
           <ul className="header-list">
             <li>
-              <a href="" className="nav-item-primary">
+              <Link to="/" className="nav-item-primary">
                 Docs
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="" className="nav-item-primary">
+              <Link to="/about" className="nav-item-primary">
                 About
-              </a>
+              </Link>
             </li>
             <li>
               <Link to="/support-us" className="nav-item">

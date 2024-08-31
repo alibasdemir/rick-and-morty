@@ -1,0 +1,13 @@
+h3 {
+  font-weight: 800;
+  text-rendering: optimizeLegibility;
+  font-size: 1.31951rem;
+  line-height: 1.1;
+  margin-top: 2.4375rem;
+}
+
+.about a {
+  color: rgb(51, 51, 51);
+  border-bottom: 2px solid rgb(255, 152, 0);
+  transition: 0.1s;
+}
