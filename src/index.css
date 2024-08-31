@@ -2,12 +2,9 @@
   --hoover-color: rgb(255, 152, 0);
 }
 
-* {
-    box-sizing: inherit;
-}
-
 body {
   margin: 0;
+  color: hsla(0, 0%, 0%, 0.8);;
 }
 
 ::selection {

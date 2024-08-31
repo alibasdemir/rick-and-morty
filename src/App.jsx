@@ -4,6 +4,7 @@ import NotFound from "./pages/NotFound/NotFound";
 import HomePage from "./pages/HomePage/HomePage";
 import Navbar from "./components/Navbar/Navbar";
 import FooterContainer from "./containers/FooterContainer";
+import SupportUs from "./pages/SupportUs/SupportUs";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/support-us" element={<SupportUs />} />
         </Routes>
         <FooterContainer />
       </Router>
