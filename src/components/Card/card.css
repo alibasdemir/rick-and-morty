@@ -30,7 +30,16 @@ h2 {
   margin: 0.75rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  position: relative;
 }
+
+.favorite-container {
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  z-index: 2;
+}
+
 
 .divImg {
   flex: 2 1 0%;

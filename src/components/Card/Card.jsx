@@ -1,3 +1,4 @@
+import Favorite from "../Favorite/Favorite";
 import "./card.css";
 
 /* eslint-disable react/prop-types */
@@ -62,7 +63,10 @@ function Card({
               {episodeName}
             </a>
           </div>
-        </div>
+          </div>
+            <div className="favorite-container">
+              <Favorite />
+          </div>
       </article>
     </>
   );
