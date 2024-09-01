@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./cardContainer.css";
 import { getAllCharacters, getEpisodeName } from "../utils/axiosApi";
 import Card from "../components/Card/Card";
@@ -6,6 +6,7 @@ import Pagination from "../components/Pagination/Pagination";
 import SearchBar from "../components/SearchBar/SearchBar";
 import Filter from "../components/Filter/Filter";
 import { useNavigate, useLocation } from "react-router-dom";
+import { LikeContext } from "../contexts/LikeContext";
 
 function CardContainer() {
   const [characters, setCharacters] = useState([]);
@@ -17,6 +18,8 @@ function CardContainer() {
   const [statusFilter, setStatusFilter] = useState("");
   const [genderFilter, setGenderFilter] = useState("");
   const [isEmptyResult, setIsEmptyResult] = useState(false);
+
+  const { likedCharacters, handleLike } = useContext(LikeContext); // from context
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -111,6 +114,8 @@ function CardContainer() {
                     locationName={char.location.name}
                     episodeUrl={char.episode[0]}
                     episodeName={char.episodeName}
+                    isLiked={likedCharacters[char.id] || false}
+                    onLike={() => handleLike(char.id)}
                   />
                 ))}
               </div>

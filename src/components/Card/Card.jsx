@@ -13,6 +13,8 @@ function Card({
   locationName,
   episodeUrl,
   episodeName,
+  isLiked,
+  onLike,
 }) {
   
   const statusClass = 
@@ -65,7 +67,7 @@ function Card({
           </div>
           </div>
             <div className="favorite-container">
-              <Favorite />
+              <Favorite isLiked={isLiked} onClick={onLike}/>
           </div>
       </article>
     </>

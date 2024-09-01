@@ -6,11 +6,13 @@ import Navbar from "./components/Navbar/Navbar";
 import FooterContainer from "./containers/FooterContainer";
 import SupportUs from "./pages/SupportUs/SupportUs";
 import About from "./pages/About/About";
+import { LikeProvider } from "./contexts/LikeContext";
 
 function App() {
   return (
     <>
       <Router>
+        <LikeProvider>
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -19,6 +21,7 @@ function App() {
           <Route path="/about" element={<About />} />
         </Routes>
         <FooterContainer />
+        </LikeProvider>
       </Router>
     </>
   );
