@@ -1,7 +1,13 @@
+import { LikeContext } from "../../contexts/LikeContext";
 import "./navbar.css";
 import { Link } from "react-router-dom";
+import { useContext } from 'react';
+
 
 function Navbar() {
+
+  const { getFavoritesCount } = useContext(LikeContext);
+
   return (
     <div>
       <nav className="headerr">
@@ -19,7 +25,7 @@ function Navbar() {
             </li>
             <li>
               <Link to="/favorites" className="nav-item-primary">
-                Favorites
+                Favorites <span style={{color: "green"}}>[ {getFavoritesCount()} ]</span>
               </Link>
             </li>
             <li>

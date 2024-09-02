@@ -20,8 +20,12 @@ export const LikeProvider = ({ children }) => {
     }));
   };
 
+  const getFavoritesCount = () => {
+    return Object.values(likedCharacters).filter((isLiked) => isLiked).length;
+  };
+
   return (
-    <LikeContext.Provider value={{ likedCharacters, handleLike }}>
+    <LikeContext.Provider value={{ likedCharacters, handleLike, getFavoritesCount }}>
       {children}
     </LikeContext.Provider>
   );
