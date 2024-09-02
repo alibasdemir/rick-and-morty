@@ -156,12 +156,30 @@
     max-width: 150px;
   }
 
-  @media (max-width: 768px) {
-    .flip-card:hover {
-      transform: rotateY(0deg);
-    }
+  .flip-card:hover {
+    transform: rotateY(0deg);
   }
   .flip-card.flipped {
     transform: rotateY(180deg);
+  }
+
+  .favorite-item img {
+    width: 120px;
+  }
+
+  .favorite-details h2 {
+    font-size: 11px;
+  }
+
+  .image-container {
+    width: 120px;
+    height: 120px;
+  }
+
+  .status-badge {
+    top: 5px;
+    right: 5px;
+    padding: 1.5px 3px;
+    font-size: 8px;
   }
 }

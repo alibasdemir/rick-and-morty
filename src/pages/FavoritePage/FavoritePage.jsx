@@ -7,7 +7,7 @@ import Favorite from "../../components/Favorite/Favorite";
 function FavoritePage() {
   const { likedCharacters, handleLike } = useContext(LikeContext);
   const [favoriteDetails, setFavoriteDetails] = useState([]);
-  const [flippedId, setFlippedId] = useState(null);
+  const [flippedIds, setFlippedIds] = useState(new Set());
 
   useEffect(() => {
     const fetchFavorites = async () => {
@@ -23,7 +23,15 @@ function FavoritePage() {
   }, [likedCharacters]);
 
   const handleCardClick = (id) => {
-    setFlippedId(flippedId === id ? null : id);
+    setFlippedIds((prevFlippedIds) => {
+      const newFlippedIds = new Set(prevFlippedIds);
+      if (newFlippedIds.has(id)) {
+        newFlippedIds.delete(id);
+      } else {
+        newFlippedIds.add(id);
+      }
+      return newFlippedIds;
+    });
   };
 
   const getStatusImage = (status) => {
@@ -70,8 +78,8 @@ function FavoritePage() {
                 </div>
               <div className="image-container">
                 <div
-                className={`flip-card ${flippedId === char.id ? 'flipped' : ''}`}
-                onClick={() => handleCardClick(char.id)}
+                  className={`flip-card ${flippedIds.has(char.id) ? 'flipped' : ''}`}
+                  onClick={() => handleCardClick(char.id)}
                 >
                   <div className="flip-card-inner">
                     <div className="flip-card-front">
