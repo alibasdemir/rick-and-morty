@@ -1,10 +1,41 @@
 import "./favorite.css";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 /* eslint-disable react/prop-types */
 const Favorite = ({ isLiked, onClick }) => {
+  const handleClick = () => {
+    if (isLiked) {
+      toast.warning("Removed from favorites! 👎", {
+        position: "top-right",
+        style: {
+          backgroundColor: 'rgb(214, 61, 46)',
+          color: '#ffffff',
+          borderRadius: '5px',
+        },
+        progressStyle: {
+          background: '#f0f0f0'
+        },
+      });
+    } else {
+      toast.success("Added to favorites! 👍", {
+        position: "top-right",
+        style: {
+          backgroundColor: 'rgb(85, 204, 68)',
+          color: '#ffffff',
+          borderRadius: '5px',
+        },
+        progressStyle: {
+          background: '#f0f0f0'
+        }
+      });
+    }
+    onClick();
+  };
+
   return (
     <>
-      <button className={`like-button ${isLiked ? "liked" : ""}`} onClick={onClick}>
+      <button className={`like-button ${isLiked ? "liked" : ""}`} onClick={handleClick}>
         <div className="like-wrapper">
           <div className="ripple"></div>
           <svg className="heart" width="24" height="24" viewBox="0 0 24 24">

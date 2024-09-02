@@ -8,21 +8,24 @@ import SupportUs from "./pages/SupportUs/SupportUs";
 import About from "./pages/About/About";
 import FavoritePage from "./pages/FavoritePage/FavoritePage";
 import { LikeProvider } from "./contexts/LikeContext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <>
       <Router>
+        <ToastContainer />
         <LikeProvider>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="*" element={<NotFound />} />
-          <Route path="/support-us" element={<SupportUs />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/favorites" element={<FavoritePage />} />
-        </Routes>
-        <FooterContainer />
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="*" element={<NotFound />} />
+            <Route path="/support-us" element={<SupportUs />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/favorites" element={<FavoritePage />} />
+          </Routes>
+          <FooterContainer />
         </LikeProvider>
       </Router>
     </>

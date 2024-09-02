@@ -228,3 +228,30 @@
     font-size: 10vmin;
   }
 }
+
+.Toastify__toast {
+  font-size: 16px;
+  text-align: center;
+}
+
+.Toastify__toast--success svg {
+  fill: #ffffff;
+}
+
+.Toastify__toast--warning svg {
+  fill: #ffffff;
+}
+
+.Toastify__toast-container--top-right .Toastify__toast {
+  margin-bottom: 10px;
+}
+
+.Toastify__close-button:hover {
+  color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+  .Toastify__toast {
+    font-size: 15px;
+  }
+}
