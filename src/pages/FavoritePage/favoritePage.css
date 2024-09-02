@@ -1,6 +1,7 @@
 .favorite-page {
   padding: 20px;
   background: rgb(32, 35, 41);
+  padding-bottom: 100px;
 }
 
 .favorite-list {
@@ -17,7 +18,7 @@
   font-weight: 900;
   line-height: 1.34;
   padding: 0px;
-  margin-top: 70px;
+  margin-top: 30px;
 }
 
 .favorite-item {
@@ -62,7 +63,7 @@
 
 .noFavorite {
   font-size: 76px;
-  margin: 58px 0;
+  margin: 30px 0;
 }
 
 @keyframes rotateFromRight {
@@ -138,4 +139,29 @@
   border-radius: 5px;
   font-size: 11px;
   text-transform: uppercase;
+}
+
+@media (max-width: 1024px) {
+  .noFavorite {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .noFavorite {
+    font-size: 20px;
+  }
+
+  .favorite-item {
+    max-width: 150px;
+  }
+
+  @media (max-width: 768px) {
+    .flip-card:hover {
+      transform: rotateY(0deg);
+    }
+  }
+  .flip-card.flipped {
+    transform: rotateY(180deg);
+  }
 }
