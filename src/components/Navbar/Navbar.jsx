@@ -1,4 +1,3 @@
-import React from "react"; // eslint-disable-line no-unused-vars
 import "./navbar.css";
 import { Link } from "react-router-dom";
 
@@ -13,6 +12,16 @@ function Navbar() {
             </svg>
           </Link>
           <ul className="header-list">
+          <li>
+              <Link to="/" className="nav-item-primary">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/favorites" className="nav-item-primary">
+                Favorites
+              </Link>
+            </li>
             <li>
               <Link to="/" className="nav-item-primary">
                 Docs

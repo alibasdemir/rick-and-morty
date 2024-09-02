@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar/Navbar";
 import FooterContainer from "./containers/FooterContainer";
 import SupportUs from "./pages/SupportUs/SupportUs";
 import About from "./pages/About/About";
+import FavoritePage from "./pages/FavoritePage/FavoritePage";
 import { LikeProvider } from "./contexts/LikeContext";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
           <Route path="/support-us" element={<SupportUs />} />
           <Route path="/about" element={<About />} />
+          <Route path="/favorites" element={<FavoritePage />} />
         </Routes>
         <FooterContainer />
         </LikeProvider>
